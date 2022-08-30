@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import Navbar from './components/Navbar/'
 
 function App() {
   return (
@@ -7,7 +8,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edita <code>src/App.js</code> guardalo y luego reinicia.
+          Bienvenidos a "La Palangana"
         </p>
         <a
           className="App-link"
