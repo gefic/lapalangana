@@ -3,28 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
 
-function Navbar() {
-  return (
-    <>
-      <header>
-        <strong>
-          <em>React-Prueba</em>
-          <ui>
-            <li>
-              Inicio  
-            </li>
-          </ui>
-        </strong>
-      </header>
-    </>
-  );
-}
-export default Navbar;
-
-
-
-
-function ColorSchemesExample() {
+function NavBar() {
   return (
     <>
       <Navbar bg="dark" variant="dark">
@@ -42,4 +21,4 @@ function ColorSchemesExample() {
   );
 }
 
-export default ColorSchemesExample;
+export default NavBar;
