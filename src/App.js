@@ -1,12 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar/'
-import Carrito from './components/Carrito/'
+import CarWidget from './components/CarWidget/'
 
 function App() {
   return (
     <NavBar/>
-    <Carrito/>
+    <CarWidget/>
   );
 }
 
