@@ -1,8 +1,8 @@
-# Getting Started with Create React App
+# Proyecto "La Palangana" para el curso de ReactJS de Coder House
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+13 Set: Limpieza y ordenado de código.
 
-## Available Scripts
+## Ejecución según el Readme original:
 
 In the project directory, you can run:
 
