@@ -1,30 +1,28 @@
-import ItemCount from "../itemCount/ItemCount";
 import { useEffect, useState } from "react";
 import ItemList from "../itemList/ItemList";
 import promesa from "../../utils/promesa";
-import Card from "react-bootstrap/Card";
 import productsMx from "../../utils/products";
+import { useParams } from "react-router-dom";
 
-const ItemListContainer = ({ greeting }) => {
+const ItemListContainer = () => {
   const [prods, setProds] = useState([]);
+  const { idCategory } = useParams();
 
   useEffect(() => {
-    promesa(2000, productsMx)
-      .then((result) => setProds(result))
-      .catch((err) => console.log(err));
-  }, []);
-  
-  const onAdd = (cantidad) => {
-    alert("Este Gringo va a comprar " + cantidad + " pinches items");
-  };
+    if (idCategory) {
+      promesa(2000, productsMx.filter((item) => item.category === parseInt(idCategory)))
+        .then((result) => setProds(result))
+        .catch((err) => console.log(err));
+    } else {
+      promesa(2000, productsMx)
+        .then((result) => setProds(result))
+        .catch((err) => console.log(err));
+    }
+  }, [idCategory]);
 
   return (
     <>
-      <Card>
-        <Card.Body>{greeting}</Card.Body>
-      </Card>
       <ItemList productsItem={prods} />
-      <ItemCount stock={5} initial={1} onAdd={onAdd} />
     </>
   );
 };

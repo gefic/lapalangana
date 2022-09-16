@@ -4,17 +4,20 @@ import Button from "react-bootstrap/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { faMinus } from "@fortawesome/free-solid-svg-icons";
-
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const ItemCount = ({ stock, initial, onAdd}) => {
   const [qty, setQty] = useState(initial);
+
+  useEffect(() => {
+    setQty(initial);
+  }, [initial]);
 
   const handleClickPlus = () => {
     if (qty < stock) {
       setQty(qty + 1);
     } else {
-      alert('Cantidad Máxima de Productos alcanzada');
+      alert('Alcanzaste el máximo de unidades');
     }
   };
 
@@ -22,7 +25,7 @@ const ItemCount = ({ stock, initial, onAdd}) => {
     if (qty > initial) {
       setQty(qty - 1);
     } else {
-      alert ('La cantidad mínima de productos es de ' + initial)
+      alert ('Compra mínima ' + initial + ' unidades')
     }
   };
 
@@ -45,9 +48,14 @@ const ItemCount = ({ stock, initial, onAdd}) => {
             </ButtonGroup>
           </center>
         </Card.Header>
-          <Button variant="dark" onClick={() => onAdd(qty)}>
-            Agregar al carrito
+        {
+          stock && qty
+          ? <Button variant="dark" onClick={() => onAdd(qty)}>
+            Comprar Otro
           </Button>
+          : <Button disabled>Comprar</Button>
+        }
+          
       </Card>
       </center>
     </>
