@@ -1,5 +1,6 @@
 # Proyecto "La Palangana" para el curso de ReactJS de Coder House
 
+15 Set: Primer versión de entrega final.
 13 Set: Limpieza y ordenado de código.
 
 ## Ejecución según el Readme original:
